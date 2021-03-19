@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.main {
+			position: relative;
+			margin-left: 500px;
+			margin-top: 150px;
+
+		}
+		#hour {
+				position: absolute;
+    width: 6px;
+    height: 48px;
+    background-color: black;
+    margin-left: 108px;
+    margin-top: 65px;
+ 
+    transform-origin: bottom;
+
+		}
+		#min {
+			position: absolute;
+    width: 6px;
+    height: 78px;
+    background-color: black;
+    margin-left: 107px;
+    margin-top: 37px;
+   
+    transform-origin: bottom;
+		}
+		#second {
+		    position: absolute;
+    	width: 3px;
+    	height: 78px;
+    	background-color: black;
+    	margin-left: 109px;
+    	margin-top: 37px;
+    	transform-origin: bottom;
+
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="main">
+		<div id="hour"></div>
+		<div id="min"></div>
+		<div id="second"></div>
+		<img src="D:\PICTURES\shaista\clock.jpg">
+
+	</div>
+	<script type="text/javascript">
+	setInterval(() =>{
+		d = new Date();
+		console.log(d)
+		htime = d.getHours();
+		mtime = d.getMinutes();
+		stime = d.getSeconds();
+		hrotation = 30*htime+mtime/2;
+		mrotation = 6*mtime;
+		srotation = 6*stime;
+		hour.style.transform =`rotate(${hrotation}deg)`;
+		min.style.transform =`rotate(${mrotation}deg)`;
+		second.style.transform =`rotate(${srotation}deg)`;
+	},1000)
+	</script>
+	
+
+</body>
+</html>
