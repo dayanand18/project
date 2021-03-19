@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sum</title>
+<style type="text/css">
+	.main {
+		background-color: #f2eeed;
+		width:250px;
+		height: 450px;
+		display: grid;
+	    margin-left: 500px;
+
+
+	}
+	button {
+		width: 80px;
+		height: 50px;
+
+	}
+	
+</style>
+</head>
+<body>
+	<div class="main">
+		<h3 style="text-align: center;">Calculater</h3>
+		<input style="width: 240px;height: 180px;" type="text" name="screen" id="main">
+		<div>
+		<button>*</button>
+		<button >/</button>
+		<button>C</button>
+		<button>9</button>
+		<button>8</button>
+		<button>7</button>
+		<button>6</button>
+		<button>5</button>
+		<button>4</button>
+		<button>3</button>
+		<button>2</button>
+		<button>1</button>
+		<button>+</button>
+		<button>-</button>
+		<button style="font-size: 25px;">.</button>
+		<button>(</button>	
+		<button>)</button>	
+		<button>=</button>		
+		</div>
+
+		
+	</div>
+	<script type="text/javascript">
+       let screen = document.getElementById('main');
+       button = document.querySelectorAll('button');
+        let screenvalue = '';
+       for (item of button) {
+       	item.addEventListener('click',(e) =>{
+       		buttonText = e.target.innerText;
+       		if (buttonText=='/') {
+                 screenvalue+=buttonText;
+                 screen.value = screenvalue;
+            
+
+            }
+            else if (buttonText=='C') {
+            	screenvalue = ' '
+            	screen.value = screenvalue;
+       		}
+       		else if (buttonText== '=') {
+       			screen.value = eval(screenvalue)
+       		}
+       		else {
+       			screenvalue+=buttonText;
+                 screen.value = screenvalue;
+            
+       		}
+       	})
+
+       }
+
+
+
+	</script>
+
+</body>
+</html>
